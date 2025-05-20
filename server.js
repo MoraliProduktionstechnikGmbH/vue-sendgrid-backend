@@ -17,7 +17,7 @@ app.post('/api/send-email', async (req, res) => {
 	const { name, email, message } = req.body;
 
 	const msg = {
-		to: process.env.RECEIVER_EMAIL,
+		to: `${email}`,
 		from: process.env.SENDER_EMAIL, // must be verified in SendGrid
 		subject: `New Contact Form Submission from ${name}`,
 		text: `Message from ${email}:\n\n${message}`
